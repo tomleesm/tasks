@@ -5,17 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link href="./css/bootstrap.min.css">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/bootstrap-icons.css" rel="stylesheet">
 
     <title>Tasks</title>
   </head>
   <body>
     <h1>Tasks</h1>
+    <div id="app">
+      <button type="button" v-on:click="addTask" class="btn btn-light"><i class="bi bi-plus-lg"></i> 新增工作</button>
+      <ul class="task-list not-done">
+        <li class="task" v-for="task in taskListNotDone" v-bind:key="task.id">
+          <div>
+            <input type="text"
+                   placeholder="標題"
+                   class="form-control"
+                   aria-describedby="taskTitle"
+                   v-bind:value="task.title">
+          </div>
+          <div>
+            <input type="text"
+                   placeholder="詳細資料"
+                   class="form-control"
+                   aria-describedby="taskDetail"
+                   v-bind:value="task.detail">
+          </div>
+          <div>
+            <input type="time"
+                   placeholder="日期 / 時間"
+                   class="form-control"
+                   aria-describedby="taskDateTime"
+                   v-bind:value="task.dateTime">
+          </div>
+        </li>
+      </ul>
+    </div>
 
     <!-- Optional JavaScript -->
     <script src="./js/bootstrap.bundle.min.js"></script>
     <!-- Vue v3 development version -->
     <script src="./js/vue.v3.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
 
