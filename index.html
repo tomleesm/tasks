@@ -21,21 +21,21 @@
                    placeholder="標題"
                    class="form-control"
                    aria-describedby="taskTitle"
-                   v-bind:value="task.title">
+                   v-model="task.title">
           </div>
           <div>
             <input type="text"
                    placeholder="詳細資料"
                    class="form-control"
                    aria-describedby="taskDetail"
-                   v-bind:value="task.detail">
+                   v-model="task.detail">
           </div>
           <div>
-            <input type="time"
+            <input type="text"
                    placeholder="日期 / 時間"
                    class="form-control"
                    aria-describedby="taskDateTime"
-                   v-bind:value="task.dateTime">
+                   v-model="task.dateTime">
           </div>
         </li>
       </ul>
@@ -45,6 +45,7 @@
     <script src="./js/bootstrap.bundle.min.js"></script>
     <!-- Vue v3 development version -->
     <script src="./js/vue.v3.js"></script>
+    <script src="./js/uuidv4.min.js"></script>
     <script src="./js/main.js"></script>
   </body>
 </html>

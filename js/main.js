@@ -10,7 +10,7 @@ const app = Vue.createApp({
     addTask() {
       let newTask = {
         // 標題、詳細資料和日期 / 時間
-        id: 'T001',// id for :key
+        id: uuidv4(),// id for :key
         title: '',
         detail: '',
         dateTime: null
