@@ -15,7 +15,12 @@ const app = Vue.createApp({
         detail: '',
         dateTime: null
       }
-      this.taskListNotDone.push(newTask)
+      this.taskListNotDone.unshift(newTask)
+
+      this.$nextTick(() => {
+        // 新增工作後焦點在第一個工作的標題 input
+        document.querySelectorAll('.task-list.not-done input[placeholder="標題"]')[0].focus()
+      })
     }
   }
 })
